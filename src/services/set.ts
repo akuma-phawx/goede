@@ -46,9 +46,8 @@ export const getSetById = async (
   id: string
 ): Promise<SetWithCards | undefined> => {
   try {
-    const response = await fetch(`/api/sets/${id}`);
-    const res = await response.json();
-    const set = res.data;
+    const response = await fetch(`https://pkmntrackerserver-a02b64f0ae1c.herokuapp.com/api/sets/${id}`);
+    const set = await response.json();
     return set;
   } catch (error) {
     return undefined;
@@ -57,10 +56,20 @@ export const getSetById = async (
 
 export const getSetByName = async (name: string): Promise<Set | undefined> => {
   try {
-    const response = await fetch(`/api/sets/${name}`);
+    const response = await fetch(`https://pkmntrackerserver-a02b64f0ae1c.herokuapp.com/api/sets/search/${name}`);
     const set = await response.json();
     return set;
   } catch (error) {
     return undefined;
   }
 };
+
+export const getSetCards = async (id: string): Promise<ExtendedCard[]> => {
+  try {
+    const response = await fetch(`https://pkmntrackerserver-a02b64f0ae1c.herokuapp.com/api/cards/set/${id}`);
+    const cards = await response.json();
+    return cards;
+  } catch (error) {
+    return [];
+  }
+}

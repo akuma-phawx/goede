@@ -13,7 +13,7 @@ async function search(text: string): Promise<void> {
   const term = searchText.value.toLocaleLowerCase().trim(); // Clean and prepare the search term.
   if (term.length > 0) {
   //i have only one api call to fetch al lthe cards called fetchCards try to use that or create a proper search aou
-    
+
   } else {
     searchSuggetions.value = []; // Clear the search suggestions if the search term is empty.
   }
