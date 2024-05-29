@@ -11,6 +11,7 @@ import 'vue-search-select/dist/VueSearchSelect.css';
 import '@mdi/font/css/materialdesignicons.css';
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
+import 'bootstrap' //
 
 // Vuetify
 import 'vuetify/styles';
